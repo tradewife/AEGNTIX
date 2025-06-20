@@ -242,12 +242,12 @@ const Hero = () => {
             {/* Refined sub-headline with better mobile responsive text - INITIALLY HIDDEN */}
             <div ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
               <p ref={el => subtitleLinesRef.current[0] = el} className="inline">
-                AegntSite is the world's first agentic website optimization
+                AegntSite is the world's first agency for <em>self-evolving</em>
               </p>
               <span className="hidden sm:inline"><br /></span>
               <span className="sm:hidden"> </span>
               <p ref={el => subtitleLinesRef.current[1] = el} className="inline">
-                platform that audits, redesigns and deploys guaranteed
+                websites that audit, redesign and deploy guaranteed
               </p>
               <span className="hidden sm:inline"><br /></span>
               <span className="sm:hidden"> </span>
