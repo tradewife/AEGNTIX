@@ -197,7 +197,7 @@ const WaitlistCTA = () => {
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6 leading-tight px-4 sm:px-0">
-              Ready for agentic growth?
+              Ready for <em>aegntic</em> growth?
             </h2>
             <p ref={subtitleRef} className="text-base md:text-lg text-slate-600 font-light leading-relaxed px-4 sm:px-0">
               Join performance-driven leaders getting early access to the future of conversion optimization.
