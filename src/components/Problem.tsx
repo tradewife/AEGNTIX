@@ -116,9 +116,12 @@ const Problem = () => {
   return (
     <section 
       data-section="problem" 
-      className="relative py-16 md:py-24 bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800 overflow-hidden" 
+      className="relative py-16 md:py-24 bg-gradient-to-br from-blue-500/90 via-blue-600/95 to-blue-700 overflow-hidden" 
       ref={sectionRef}
     >
+      {/* Subtle overlay for depth - matching screenshot's soft blue tone */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-400/20 via-transparent to-blue-800/30"></div>
+      
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
@@ -130,7 +133,7 @@ const Problem = () => {
             </h2>
             <p 
               ref={subtitleRef}
-              className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
+              className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             >
               Every day of delayed optimization is lost revenue. The current process is fundamentally broken.
             </p>
@@ -144,12 +147,12 @@ const Problem = () => {
                 className="text-center"
               >
                 <div className="mb-6">
-                  <div className="w-1 h-16 bg-gradient-to-b from-blue-300 to-blue-500 mx-auto rounded-full"></div>
+                  <div className="w-1 h-16 bg-gradient-to-b from-blue-200/80 to-blue-300/60 mx-auto rounded-full"></div>
                 </div>
                 <h3 className="text-lg md:text-xl font-medium text-white mb-4 leading-tight">
                   {problem.title}
                 </h3>
-                <p className="text-base text-blue-100 leading-relaxed font-light max-w-md mx-auto">
+                <p className="text-base text-blue-50/80 leading-relaxed font-light max-w-md mx-auto">
                   {problem.description}
                 </p>
               </div>

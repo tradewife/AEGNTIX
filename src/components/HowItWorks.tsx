@@ -100,14 +100,17 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-600 via-blue-700 to-yellow-400 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-500/85 via-blue-600/90 to-yellow-400/80 overflow-hidden" ref={sectionRef}>
+      {/* Subtle gradient overlay matching the delicate blue-to-yellow transition in screenshot */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/25 via-blue-500/15 to-yellow-300/35"></div>
+      
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
               Three breakthrough capabilities.<br />One autonomous system.
             </h2>
-            <p ref={subtitleRef} className="text-base md:text-lg text-blue-100 font-light leading-relaxed px-4 sm:px-0">
+            <p ref={subtitleRef} className="text-base md:text-lg text-blue-50/90 font-light leading-relaxed px-4 sm:px-0">
               The first platform to combine predictive analytics, autonomous design, and deployment.
             </p>
           </div>
@@ -116,13 +119,13 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <div key={index} ref={el => stepsRef.current[index] = el} className="text-center">
                 <div className="mb-6 md:mb-8">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-sm font-medium mb-4 md:mb-6 mx-auto border border-white/20">
+                  <div className="w-12 h-12 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-sm font-medium mb-4 md:mb-6 mx-auto border border-white/25">
                     {step.number}
                   </div>
                 </div>
                 
                 <h3 className="text-lg md:text-xl font-medium text-white mb-3 md:mb-4 leading-tight">{step.title}</h3>
-                <p className="text-base text-blue-100 leading-relaxed font-light max-w-md mx-auto">{step.description}</p>
+                <p className="text-base text-blue-50/80 leading-relaxed font-light max-w-md mx-auto">{step.description}</p>
               </div>
             ))}
           </div>

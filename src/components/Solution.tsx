@@ -244,14 +244,17 @@ const Solution = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-700 via-blue-600 to-yellow-400 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-600/95 via-blue-500/90 to-yellow-300/85 overflow-hidden" ref={sectionRef}>
+      {/* Delicate overlay matching screenshot's soft blue-to-yellow transition */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-blue-400/20 to-yellow-200/40"></div>
+      
       <div className="relative container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
               From audit to revenue lift<br />in three steps
             </h2>
-            <p ref={subtitleRef} className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
+            <p ref={subtitleRef} className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
               Enterprise-grade setup in minutes. Guaranteed results while you focus on strategy.
             </p>
           </div>
@@ -268,7 +271,7 @@ const Solution = () => {
                   <span>0{index + 1}</span>
                 </div>
                 <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 leading-tight">{feature.title}</h3>
-                <p className="text-blue-100 leading-relaxed font-light text-base md:text-lg max-w-2xl mx-auto mb-6 md:mb-8">{feature.description}</p>
+                <p className="text-blue-50/80 leading-relaxed font-light text-base md:text-lg max-w-2xl mx-auto mb-6 md:mb-8">{feature.description}</p>
                 <div className="max-w-md mx-auto">
                   {renderPreview(feature.preview)}
                 </div>

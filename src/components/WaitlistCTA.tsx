@@ -142,13 +142,16 @@ const WaitlistCTA = () => {
 
   if (isSubmitted) {
     return (
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-yellow-200 via-yellow-100 to-orange-100">
-        <div className="container mx-auto px-6">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-yellow-100/90 via-orange-50/85 to-orange-100/80">
+        {/* Subtle warm overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 via-orange-25/30 to-orange-50/40"></div>
+        
+        <div className="relative container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8 md:mb-12">
-              <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-orange-400/30">
-                <div className="w-6 h-6 rounded-full bg-orange-500/40 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-orange-600"></div>
+              <div className="w-12 h-12 bg-orange-400/20 rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-orange-300/30">
+                <div className="w-6 h-6 rounded-full bg-orange-400/40 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-orange-500"></div>
                 </div>
               </div>
             </div>
@@ -159,7 +162,7 @@ const WaitlistCTA = () => {
               You're now part of the agentic optimization revolution. 
               Expect beta access and exclusive insights within 48 hours.
             </p>
-            <div className="bg-white/80 border border-orange-200 rounded-xl p-4 md:p-6 text-left mx-4 sm:mx-0 backdrop-blur-sm">
+            <div className="bg-white/80 border border-orange-200/60 rounded-xl p-4 md:p-6 text-left mx-4 sm:mx-0 backdrop-blur-sm shadow-sm">
               <p className="font-medium text-slate-900 mb-2">What happens next?</p>
               <p className="text-slate-600 font-light text-sm md:text-base">
                 You'll receive priority access to AegntSite's private beta, plus exclusive case studies and optimization insights.
@@ -172,8 +175,11 @@ const WaitlistCTA = () => {
   }
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-yellow-200 via-yellow-100 to-orange-100 overflow-hidden" ref={sectionRef}>
-      <div className="container mx-auto px-6">
+    <section className="relative py-16 md:py-24 bg-gradient-to-br from-yellow-100/90 via-orange-50/85 to-orange-100/80 overflow-hidden" ref={sectionRef}>
+      {/* Delicate cream-to-orange gradient overlay matching screenshot's soft tones */}
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 via-orange-25/30 to-orange-50/40"></div>
+      
+      <div className="relative container mx-auto px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-4 md:mb-6 leading-tight px-4 sm:px-0">
@@ -184,7 +190,7 @@ const WaitlistCTA = () => {
             </p>
           </div>
 
-          <div ref={formRef} className="bg-white/80 border border-orange-200 rounded-xl shadow-sm p-6 md:p-8 mx-4 sm:mx-0 backdrop-blur-sm">
+          <div ref={formRef} className="bg-white/80 border border-orange-200/60 rounded-xl shadow-sm p-6 md:p-8 mx-4 sm:mx-0 backdrop-blur-sm">
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {submitError && (
                 <div className="bg-red-50 border border-red-200 rounded-lg p-3">
@@ -201,10 +207,10 @@ const WaitlistCTA = () => {
                   id="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/20 text-slate-900 placeholder-slate-400 bg-white/90 ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-400/20 text-slate-900 placeholder-slate-400 bg-white/90 ${
                     errors.email 
                       ? 'border-red-300 focus:border-red-500' 
-                      : 'border-orange-300 focus:border-orange-500'
+                      : 'border-orange-200 focus:border-orange-400'
                   }`}
                   placeholder="you@company.com"
                 />
@@ -221,10 +227,10 @@ const WaitlistCTA = () => {
                   id="persona"
                   value={formData.persona}
                   onChange={(e) => handleInputChange('persona', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/20 text-slate-900 bg-white/90 ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-400/20 text-slate-900 bg-white/90 ${
                     errors.persona 
                       ? 'border-red-300 focus:border-red-500' 
-                      : 'border-orange-300 focus:border-orange-500'
+                      : 'border-orange-200 focus:border-orange-400'
                   }`}
                 >
                   <option value="" className="text-slate-500">Select your role</option>
@@ -248,7 +254,7 @@ const WaitlistCTA = () => {
                   id="website"
                   value={formData.website}
                   onChange={(e) => handleInputChange('website', e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all duration-200 text-slate-900 placeholder-slate-400 bg-white/90"
+                  className="w-full px-4 py-3 rounded-lg border border-orange-200 focus:outline-none focus:ring-2 focus:ring-orange-400/20 focus:border-orange-400 transition-all duration-200 text-slate-900 placeholder-slate-400 bg-white/90"
                   placeholder="https://yoursite.com"
                 />
               </div>
