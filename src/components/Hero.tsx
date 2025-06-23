@@ -217,10 +217,10 @@ const Hero = () => {
           />
         </div>
 
-        {/* Seamless gradient transition starts only at the very bottom - no cutting off the image */}
+        {/* Blue gradient with warm highlights - restored to deployed version */}
         <div 
           ref={gradientRef}
-          className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-800 to-transparent"
+          className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-blue-800/40 to-amber-900/30"
         ></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
