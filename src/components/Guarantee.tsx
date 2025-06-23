@@ -26,12 +26,11 @@ const Guarantee = () => {
       gsap.set(iconRef.current, { 
         opacity: 0, 
         scale: 0.3, 
-        rotation: -360,
         y: 100
       });
       gsap.set(innerIconRef.current, {
         scale: 0,
-        rotation: -360 // Start rotated for the spin effect
+        rotation: -360 // Start at -360 for perfect single spin
       });
       gsap.set(pulseRef.current, {
         scale: 0,
@@ -70,7 +69,6 @@ const Guarantee = () => {
         .to(iconRef.current, {
           opacity: 1,
           scale: 1.2,
-          rotation: 0,
           y: 0,
           duration: 1.2,
           ease: "back.out(2)",
@@ -80,19 +78,19 @@ const Guarantee = () => {
           duration: 0.4,
           ease: "power2.out"
         }, "-=0.3")
-        // PERFECT single spin - exactly 360 degrees once and settle
+        // PERFECT single spin - exactly 360 degrees once and settle elegantly
         .to(innerIconRef.current, {
           scale: 1,
-          rotation: 0, // Elegant single 360° spin (from -360 to 0)
-          duration: 1.5,
+          rotation: 0, // Spins from -360 to 0 (exactly one full rotation)
+          duration: 1.2,
           ease: "power2.out"
-        }, "-=1.2")
+        }, "-=1.4")
         .to(pulseRef.current, {
           scale: 1,
           opacity: 0.6,
           duration: 0.6,
           ease: "power2.out"
-        }, "-=0.8")
+        }, "-=0.6")
         
         // Title with dramatic entrance
         .to(titleRef.current, {
@@ -127,7 +125,7 @@ const Guarantee = () => {
           }
         }, "-=0.6");
 
-      // ONLY gentle floating - NO rotation after initial spin
+      // ONLY gentle floating - NO continuous rotation after the single spin
       gsap.to(iconRef.current, {
         y: -8,
         duration: 3,
@@ -198,25 +196,13 @@ const Guarantee = () => {
         }
       });
 
-      // Parallax effect for the entire section
-      gsap.to(sectionRef.current, {
-        yPercent: -10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1
-        }
-      });
-
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 pb-0 bg-gradient-to-br from-blue-400 via-blue-300 to-yellow-300 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-400 via-blue-300 to-yellow-300 overflow-hidden" ref={sectionRef}>
       {/* EXACT gradient overlay matching mobile screenshot - soft blue to yellow transition */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-300/60 via-blue-200/40 to-yellow-200/70" ref={gradientRef}></div>
       
