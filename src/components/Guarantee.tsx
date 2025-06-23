@@ -94,34 +94,41 @@ const Guarantee = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-200 via-blue-100 to-slate-50 overflow-hidden" ref={sectionRef}>
-      {/* Seamless royal blue gradient with prominent gold highlights */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-200/95 via-blue-100/90 to-slate-50/85"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-200/60 via-transparent to-amber-400/70"></div>
-      <div className="absolute bottom-0 right-0 w-1/2 h-2/3 bg-gradient-to-tl from-amber-400/40 to-transparent"></div>
+    <section className="relative py-16 md:py-24 bg-slate-900 overflow-hidden" ref={sectionRef}>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+          alt="Professional handshake and agreement" 
+          className="w-full h-full object-cover opacity-20"
+        />
+      </div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-900/95"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8 md:mb-12">
-            <div ref={iconRef} className="w-12 h-12 bg-amber-500/40 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-amber-400/50">
-              <div className="w-6 h-6 rounded-full bg-amber-500/60 flex items-center justify-center">
+            <div ref={iconRef} className="w-12 h-12 bg-amber-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-amber-400/30">
+              <div className="w-6 h-6 rounded-full bg-amber-500/40 flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-amber-500"></div>
               </div>
             </div>
           </div>
 
-          <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-slate-800 mb-6 md:mb-8 leading-tight px-4 sm:px-0">
+          <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-6 md:mb-8 leading-tight px-4 sm:px-0">
             We guarantee your results
           </h2>
 
-          <div ref={cardRef} className="bg-white/60 backdrop-blur-sm border border-white/40 rounded-xl p-6 md:p-8 mb-8 md:mb-12 mx-4 sm:mx-0">
-            <p className="text-base md:text-lg text-slate-700 mb-4 md:mb-6 font-light leading-relaxed">
+          <div ref={cardRef} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 mb-8 md:mb-12 mx-4 sm:mx-0">
+            <p className="text-base md:text-lg text-slate-300 mb-4 md:mb-6 font-light leading-relaxed">
               Our causal inference engine predicts conversion lifts with 94% accuracy. Every deployment comes with our 
-              <span className="text-amber-600 font-medium"> Conversion Warranty</span>: 
+              <span className="text-amber-400 font-medium"> Conversion Warranty</span>: 
               if we don't deliver the predicted revenue lift, you get a full service credit.
             </p>
             
-            <p className="text-amber-600 font-medium">
+            <p className="text-amber-400 font-medium">
               Backed by statistical science. Guaranteed by us.
             </p>
           </div>
@@ -129,8 +136,8 @@ const Guarantee = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 px-4 sm:px-0">
             {trustIndicators.map((indicator, index) => (
               <div key={index} ref={el => indicatorsRef.current[index] = el} className="text-center">
-                <div className="w-2 h-2 rounded-full bg-amber-500/90 mx-auto mb-3"></div>
-                <span className="text-slate-600 text-sm font-light">{indicator}</span>
+                <div className="w-2 h-2 rounded-full bg-amber-500/80 mx-auto mb-3"></div>
+                <span className="text-slate-400 text-sm font-light">{indicator}</span>
               </div>
             ))}
           </div>

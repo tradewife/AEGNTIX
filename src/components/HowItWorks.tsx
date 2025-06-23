@@ -104,11 +104,18 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-400 via-blue-300 to-blue-200 overflow-hidden" ref={sectionRef}>
-      {/* Seamless royal blue gradient with prominent gold highlights */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-400/95 via-blue-300/90 to-blue-200/85"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/70 via-transparent to-amber-400/60"></div>
-      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-amber-400/30 to-transparent"></div>
+    <section className="relative py-16 md:py-24 bg-slate-900 overflow-hidden" ref={sectionRef}>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+          alt="Team collaboration and workflow" 
+          className="w-full h-full object-cover opacity-25"
+        />
+      </div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-slate-900/80 to-slate-900/90"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
@@ -116,7 +123,7 @@ const HowItWorks = () => {
             <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
               From audit to revenue lift<br />in three steps
             </h2>
-            <p ref={subtitleRef} className="text-base md:text-lg text-blue-50 font-light leading-relaxed px-4 sm:px-0">
+            <p ref={subtitleRef} className="text-base md:text-lg text-slate-300 font-light leading-relaxed px-4 sm:px-0">
               Enterprise-grade setup in minutes. Guaranteed results while you focus on strategy.
             </p>
           </div>
@@ -125,13 +132,13 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <div key={index} ref={el => stepsRef.current[index] = el} className="text-center">
                 <div className="mb-6 md:mb-8">
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-sm font-medium mb-4 md:mb-6 mx-auto border border-white/30">
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center text-white text-sm font-medium mb-4 md:mb-6 mx-auto border border-white/20">
                     {step.number}
                   </div>
                 </div>
                 
                 <h3 className="text-base md:text-lg font-medium text-white mb-3 md:mb-4 leading-tight">{step.title}</h3>
-                <p className="text-sm md:text-base text-blue-50 leading-relaxed font-light">{step.description}</p>
+                <p className="text-sm md:text-base text-slate-300 leading-relaxed font-light">{step.description}</p>
               </div>
             ))}
           </div>
