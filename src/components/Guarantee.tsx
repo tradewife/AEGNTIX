@@ -65,7 +65,7 @@ const Guarantee = () => {
         }
       });
 
-      // Epic icon entrance with multiple layers
+      // Epic icon entrance with single elegant spin
       masterTL
         .to(iconRef.current, {
           opacity: 1,
@@ -82,9 +82,9 @@ const Guarantee = () => {
         }, "-=0.3")
         .to(innerIconRef.current, {
           scale: 1,
-          rotation: 0,
-          duration: 0.8,
-          ease: "elastic.out(1, 0.5)"
+          rotation: 360, // Single elegant 360° spin
+          duration: 1.2,
+          ease: "power2.out"
         }, "-=0.8")
         .to(pulseRef.current, {
           scale: 1,
@@ -126,23 +126,16 @@ const Guarantee = () => {
           }
         }, "-=0.6");
 
-      // Continuous floating animations
+      // Gentle floating animation for the icon (no rotation)
       gsap.to(iconRef.current, {
         y: -8,
-        rotation: 5,
         duration: 3,
         ease: "sine.inOut",
         repeat: -1,
         yoyo: true
       });
 
-      gsap.to(innerIconRef.current, {
-        rotation: 360,
-        duration: 20,
-        ease: "none",
-        repeat: -1
-      });
-
+      // Subtle pulse animation
       gsap.to(pulseRef.current, {
         scale: 1.3,
         opacity: 0.2,
@@ -157,7 +150,6 @@ const Guarantee = () => {
       iconHover
         .to(iconRef.current, {
           scale: 1.15,
-          rotation: 15,
           duration: 0.3,
           ease: "power2.out"
         })
