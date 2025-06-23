@@ -94,7 +94,7 @@ const Guarantee = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-slate-900 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 bg-gradient-to-br from-amber-800 via-amber-700 to-orange-800 overflow-hidden" ref={sectionRef}>
       {/* Background image */}
       <div className="absolute inset-0">
         <img 
@@ -104,8 +104,8 @@ const Guarantee = () => {
         />
       </div>
       
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/95 via-slate-900/85 to-slate-900/95"></div>
+      {/* Amber gradient overlay to match mobile screenshots */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-800/95 via-amber-700/85 to-orange-800/95"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
@@ -122,13 +122,13 @@ const Guarantee = () => {
           </h2>
 
           <div ref={cardRef} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 mb-8 md:mb-12 mx-4 sm:mx-0">
-            <p className="text-base md:text-lg text-slate-300 mb-4 md:mb-6 font-light leading-relaxed">
+            <p className="text-base md:text-lg text-amber-100 mb-4 md:mb-6 font-light leading-relaxed">
               Our causal inference engine predicts conversion lifts with 94% accuracy. Every deployment comes with our 
-              <span className="text-amber-400 font-medium"> Conversion Warranty</span>: 
+              <span className="text-amber-300 font-medium"> Conversion Warranty</span>: 
               if we don't deliver the predicted revenue lift, you get a full service credit.
             </p>
             
-            <p className="text-amber-400 font-medium">
+            <p className="text-amber-300 font-medium">
               Backed by statistical science. Guaranteed by us.
             </p>
           </div>
@@ -136,8 +136,8 @@ const Guarantee = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 px-4 sm:px-0">
             {trustIndicators.map((indicator, index) => (
               <div key={index} ref={el => indicatorsRef.current[index] = el} className="text-center">
-                <div className="w-2 h-2 rounded-full bg-amber-500/80 mx-auto mb-3"></div>
-                <span className="text-slate-400 text-sm font-light">{indicator}</span>
+                <div className="w-2 h-2 rounded-full bg-amber-400/80 mx-auto mb-3"></div>
+                <span className="text-amber-200 text-sm font-light">{indicator}</span>
               </div>
             ))}
           </div>
