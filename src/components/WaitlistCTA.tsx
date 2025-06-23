@@ -142,11 +142,11 @@ const WaitlistCTA = () => {
 
   if (isSubmitted) {
     return (
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-yellow-100/90 via-orange-50/85 to-orange-100/80">
+      <section className="relative pt-0 pb-16 md:pb-24 bg-gradient-to-br from-yellow-100/90 via-orange-50/85 to-orange-100/80">
         {/* Subtle warm overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 via-orange-25/30 to-orange-50/40"></div>
         
-        <div className="relative container mx-auto px-6">
+        <div className="relative container mx-auto px-6 pt-16 md:pt-24">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8 md:mb-12">
               <div className="w-12 h-12 bg-orange-400/20 rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-orange-300/30">
@@ -175,11 +175,11 @@ const WaitlistCTA = () => {
   }
 
   return (
-    <section className="relative py-0 bg-gradient-to-br from-yellow-100/90 via-orange-50/85 to-orange-100/80 overflow-hidden" ref={sectionRef}>
+    <section className="relative pt-0 pb-16 md:pb-24 bg-gradient-to-br from-yellow-100/90 via-orange-50/85 to-orange-100/80 overflow-hidden" ref={sectionRef}>
       {/* Delicate cream-to-orange gradient overlay matching screenshot's soft tones */}
       <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/50 via-orange-25/30 to-orange-50/40"></div>
       
-      <div className="relative container mx-auto px-6 py-16 md:py-24">
+      <div className="relative container mx-auto px-6 pt-16 md:pt-24">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-4 md:mb-6 leading-tight px-4 sm:px-0">

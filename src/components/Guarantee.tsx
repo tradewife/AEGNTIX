@@ -31,7 +31,7 @@ const Guarantee = () => {
       });
       gsap.set(innerIconRef.current, {
         scale: 0,
-        rotation: 180
+        rotation: -360 // Start rotated for the spin effect
       });
       gsap.set(pulseRef.current, {
         scale: 0,
@@ -65,7 +65,7 @@ const Guarantee = () => {
         }
       });
 
-      // Epic icon entrance with single elegant spin
+      // Epic icon entrance with PERFECT single elegant spin
       masterTL
         .to(iconRef.current, {
           opacity: 1,
@@ -80,18 +80,19 @@ const Guarantee = () => {
           duration: 0.4,
           ease: "power2.out"
         }, "-=0.3")
+        // PERFECT single spin - exactly 360 degrees once and settle
         .to(innerIconRef.current, {
           scale: 1,
-          rotation: 360, // Single elegant 360° spin
-          duration: 1.2,
+          rotation: 0, // Elegant single 360° spin (from -360 to 0)
+          duration: 1.5,
           ease: "power2.out"
-        }, "-=0.8")
+        }, "-=1.2")
         .to(pulseRef.current, {
           scale: 1,
           opacity: 0.6,
           duration: 0.6,
           ease: "power2.out"
-        }, "-=0.4")
+        }, "-=0.8")
         
         // Title with dramatic entrance
         .to(titleRef.current, {
@@ -126,7 +127,7 @@ const Guarantee = () => {
           }
         }, "-=0.6");
 
-      // Gentle floating animation for the icon (no rotation)
+      // ONLY gentle floating - NO rotation after initial spin
       gsap.to(iconRef.current, {
         y: -8,
         duration: 3,
@@ -215,7 +216,7 @@ const Guarantee = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-400 via-blue-300 to-yellow-300 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 pb-0 bg-gradient-to-br from-blue-400 via-blue-300 to-yellow-300 overflow-hidden" ref={sectionRef}>
       {/* EXACT gradient overlay matching mobile screenshot - soft blue to yellow transition */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-300/60 via-blue-200/40 to-yellow-200/70" ref={gradientRef}></div>
       
@@ -226,7 +227,7 @@ const Guarantee = () => {
               {/* Pulsing background effect */}
               <div ref={pulseRef} className="absolute inset-0 w-full h-full rounded-xl bg-orange-400/20 opacity-0"></div>
               
-              {/* Main icon container */}
+              {/* Main icon container - this will spin once elegantly */}
               <div ref={innerIconRef} className="relative w-6 h-6 rounded-full bg-orange-400/50 flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-orange-500"></div>
               </div>
