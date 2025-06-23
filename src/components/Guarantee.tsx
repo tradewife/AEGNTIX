@@ -95,18 +95,6 @@ const Guarantee = () => {
 
   return (
     <section className="relative py-16 md:py-24 bg-gradient-to-br from-amber-800 via-amber-700 to-orange-800 overflow-hidden" ref={sectionRef}>
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
-          alt="Professional handshake and agreement" 
-          className="w-full h-full object-cover opacity-20"
-        />
-      </div>
-      
-      {/* Amber gradient overlay to match mobile screenshots */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-800/95 via-amber-700/85 to-orange-800/95"></div>
-      
       <div className="relative container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-8 md:mb-12">

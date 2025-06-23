@@ -123,18 +123,6 @@ const Problem = () => {
       className="relative py-16 md:py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 overflow-hidden" 
       ref={sectionRef}
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
-          alt="Business team analyzing data" 
-          className="w-full h-full object-cover opacity-20"
-        />
-      </div>
-      
-      {/* Blue gradient overlay to match mobile screenshots */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-blue-700/70"></div>
-      
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
