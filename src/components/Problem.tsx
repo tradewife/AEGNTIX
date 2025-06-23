@@ -116,11 +116,11 @@ const Problem = () => {
   return (
     <section 
       data-section="problem" 
-      className="relative py-16 md:py-24 bg-gradient-to-br from-slate-800 via-blue-900 to-slate-900 overflow-hidden" 
+      className="relative py-16 md:py-24 bg-gradient-to-br from-blue-800 via-blue-700 to-blue-900 overflow-hidden" 
       ref={sectionRef}
     >
-      {/* Subtle yellow accent overlay matching the mobile screenshot */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-800/60 via-slate-800/40 to-yellow-600/20"></div>
+      {/* EXACT cobalt blue to yellow gradient matching mobile screenshots */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-blue-500/60 to-yellow-400/70"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
@@ -133,7 +133,7 @@ const Problem = () => {
             </h2>
             <p 
               ref={subtitleRef}
-              className="text-base md:text-lg text-blue-100/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
+              className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             >
               Every day of delayed optimization is lost revenue. The current process is fundamentally broken.
             </p>
@@ -147,12 +147,12 @@ const Problem = () => {
                 className="text-center"
               >
                 <div className="mb-6">
-                  <div className="w-1 h-16 bg-gradient-to-b from-blue-300/80 to-yellow-400/60 mx-auto rounded-full"></div>
+                  <div className="w-1 h-16 bg-gradient-to-b from-blue-200/90 to-yellow-300/80 mx-auto rounded-full"></div>
                 </div>
                 <h3 className="text-lg md:text-xl font-medium text-white mb-4 leading-tight">
                   {problem.title}
                 </h3>
-                <p className="text-base text-blue-100/80 leading-relaxed font-light max-w-md mx-auto">
+                <p className="text-base text-blue-50/85 leading-relaxed font-light max-w-md mx-auto">
                   {problem.description}
                 </p>
               </div>
