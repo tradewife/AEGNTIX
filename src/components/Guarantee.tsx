@@ -30,7 +30,7 @@ const Guarantee = () => {
       });
       gsap.set(innerIconRef.current, {
         scale: 0,
-        rotation: -360 // Start at -360 for perfect single spin
+        rotation: -360 // Start rotated for perfect single spin
       });
       gsap.set(pulseRef.current, {
         scale: 0,
@@ -82,15 +82,15 @@ const Guarantee = () => {
         .to(innerIconRef.current, {
           scale: 1,
           rotation: 0, // Spins from -360 to 0 (exactly one full rotation)
-          duration: 1.2,
+          duration: 1.4,
           ease: "power2.out"
-        }, "-=1.4")
+        }, "-=1.6")
         .to(pulseRef.current, {
           scale: 1,
           opacity: 0.6,
           duration: 0.6,
           ease: "power2.out"
-        }, "-=0.6")
+        }, "-=0.8")
         
         // Title with dramatic entrance
         .to(titleRef.current, {
