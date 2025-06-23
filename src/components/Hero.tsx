@@ -211,7 +211,7 @@ const Hero = () => {
         {/* Static background image - no animations applied */}
         <div className="absolute inset-0">
           <img 
-            src="/image0.png" 
+            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
             alt="Business professionals collaborating" 
             className="w-full h-full object-cover"
           />
@@ -220,7 +220,7 @@ const Hero = () => {
         {/* Seamless gradient transition starts only at the very bottom - no cutting off the image */}
         <div 
           ref={gradientRef}
-          className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-blue-800 to-transparent"
+          className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80"
         ></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
