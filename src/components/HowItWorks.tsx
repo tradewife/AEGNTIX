@@ -105,10 +105,10 @@ const HowItWorks = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
-              From audit to revenue lift<br />in three steps
+              Three breakthrough capabilities.<br />One autonomous system.
             </h2>
             <p ref={subtitleRef} className="text-base md:text-lg text-blue-100 font-light leading-relaxed px-4 sm:px-0">
-              Enterprise-grade setup in minutes. Guaranteed results while you focus on strategy.
+              The first platform to combine predictive analytics, autonomous design, and deployment.
             </p>
           </div>
 

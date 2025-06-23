@@ -244,15 +244,15 @@ const Solution = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-700 via-blue-600 to-blue-500 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-700 via-blue-600 to-yellow-400 overflow-hidden" ref={sectionRef}>
       <div className="relative container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
-              Three breakthrough capabilities.<br />One autonomous system.
+              From audit to revenue lift<br />in three steps
             </h2>
             <p ref={subtitleRef} className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
-              The first platform to combine predictive analytics, autonomous design, and deployment.
+              Enterprise-grade setup in minutes. Guaranteed results while you focus on strategy.
             </p>
           </div>
           
