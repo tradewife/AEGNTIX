@@ -78,7 +78,7 @@ const Guarantee = () => {
           duration: 0.4,
           ease: "power2.out"
         }, "-=0.3")
-        // PERFECT single spin - exactly 360 degrees once and settle elegantly
+        // PERFECT single spin - exactly 360 degrees once and STOP COMPLETELY
         .to(innerIconRef.current, {
           scale: 1,
           rotation: 0, // Spins from -360 to 0 (exactly one full rotation)
@@ -125,16 +125,8 @@ const Guarantee = () => {
           }
         }, "-=0.6");
 
-      // ONLY gentle floating - NO continuous rotation after the single spin
-      gsap.to(iconRef.current, {
-        y: -8,
-        duration: 3,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true
-      });
-
-      // Subtle pulse animation
+      // NO CONTINUOUS ANIMATIONS - Icon stays perfectly still after entrance
+      // Only subtle pulse animation for the background
       gsap.to(pulseRef.current, {
         scale: 1.3,
         opacity: 0.2,
@@ -144,7 +136,7 @@ const Guarantee = () => {
         yoyo: true
       });
 
-      // Interactive hover effects
+      // Interactive hover effects - ONLY on hover
       const iconHover = gsap.timeline({ paused: true });
       iconHover
         .to(iconRef.current, {
@@ -213,7 +205,7 @@ const Guarantee = () => {
               {/* Pulsing background effect */}
               <div ref={pulseRef} className="absolute inset-0 w-full h-full rounded-xl bg-orange-400/20 opacity-0"></div>
               
-              {/* Main icon container - this will spin once elegantly */}
+              {/* Main icon container - this will spin once elegantly and STAY PUT */}
               <div ref={innerIconRef} className="relative w-6 h-6 rounded-full bg-orange-400/50 flex items-center justify-center">
                 <div className="w-2 h-2 rounded-full bg-orange-500"></div>
               </div>
