@@ -26,6 +26,15 @@ export interface ContactMessage {
   created_at: string
 }
 
+export interface AssessmentRequest {
+  id: string
+  email: string
+  website: string
+  persona: string
+  status: string
+  requested_at: string
+}
+
 // API functions
 export const addToWaitlist = async (data: {
   email: string
@@ -48,6 +57,20 @@ export const sendContactMessage = async (data: {
 }) => {
   const { data: result, error } = await supabase
     .from('contact_messages')
+    .insert([data])
+    .select()
+
+  if (error) throw error
+  return result[0]
+}
+
+export const submitAssessmentRequest = async (data: {
+  email: string
+  website: string
+  persona: string
+}) => {
+  const { data: result, error } = await supabase
+    .from('assessment_requests')
     .insert([data])
     .select()
 

@@ -117,6 +117,13 @@ const Hero = () => {
     }
   };
 
+  const scrollToAssessment = () => {
+    const assessmentSection = document.querySelector('[data-section="assessment"]');
+    if (assessmentSection) {
+      assessmentSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
@@ -235,10 +242,10 @@ const Hero = () => {
             {/* Elegant CTA buttons with glass styling - correct order and text - INITIALLY HIDDEN */}
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 md:mb-20 px-4 sm:px-0 opacity-0 invisible">
               <button 
-                onClick={scrollToSection}
+                onClick={scrollToAssessment}
                 className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
               >
-                Learn more
+                Get free assessment
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               
