@@ -120,13 +120,20 @@ const Problem = () => {
   return (
     <section 
       data-section="problem" 
-      className="relative py-16 md:py-24 bg-gradient-to-b from-blue-800 via-blue-700 to-blue-600 overflow-hidden" 
+      className="relative py-16 md:py-24 bg-slate-900 overflow-hidden" 
       ref={sectionRef}
     >
-      {/* Seamless royal blue gradient with prominent gold highlights */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-800/95 via-blue-700/90 to-blue-600/85"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-800/80 via-transparent to-amber-400/40"></div>
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-amber-400/20 to-transparent"></div>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+          alt="Business team analyzing data" 
+          className="w-full h-full object-cover opacity-40"
+        />
+      </div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/80"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
@@ -139,7 +146,7 @@ const Problem = () => {
             </h2>
             <p 
               ref={subtitleRef}
-              className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
+              className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             >
               Every day of delayed optimization is lost revenue. The current process is fundamentally broken.
             </p>
@@ -153,12 +160,12 @@ const Problem = () => {
                 className="text-center group cursor-pointer"
               >
                 <div className="mb-6">
-                  <div className="w-1 h-12 md:h-16 bg-gradient-to-b from-blue-300/60 to-amber-400/90 mx-auto rounded-full group-hover:from-blue-200/80 group-hover:to-amber-300/95 transition-all duration-300"></div>
+                  <div className="w-1 h-12 md:h-16 bg-gradient-to-b from-blue-400 to-purple-500 mx-auto rounded-full group-hover:from-blue-300 group-hover:to-purple-400 transition-all duration-300"></div>
                 </div>
                 <h3 className="text-base md:text-lg font-medium text-white mb-3 md:mb-4 leading-tight">
                   {problem.title}
                 </h3>
-                <p className="text-sm md:text-base text-blue-200 leading-relaxed font-light">
+                <p className="text-sm md:text-base text-slate-300 leading-relaxed font-light">
                   {problem.description}
                 </p>
               </div>

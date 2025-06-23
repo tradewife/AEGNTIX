@@ -251,11 +251,18 @@ const Solution = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-600 via-blue-500 to-blue-400 overflow-hidden" ref={sectionRef}>
-      {/* Seamless royal blue gradient with prominent gold highlights */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/95 via-blue-500/90 to-blue-400/85"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/75 via-transparent to-amber-400/50"></div>
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-amber-400/25 to-transparent"></div>
+    <section className="relative py-16 md:py-24 bg-slate-900 overflow-hidden" ref={sectionRef}>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" 
+          alt="Modern office with technology" 
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/85 via-slate-900/75 to-slate-900/85"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
@@ -263,7 +270,7 @@ const Solution = () => {
             <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
               Three breakthrough capabilities.<br />One autonomous system.
             </h2>
-            <p ref={subtitleRef} className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
+            <p ref={subtitleRef} className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
               The first platform to combine predictive analytics, autonomous design, and deployment.
             </p>
           </div>
@@ -281,7 +288,7 @@ const Solution = () => {
                     <span>0{index + 1}</span>
                   </div>
                   <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 leading-tight">{feature.title}</h3>
-                  <p className="text-blue-100 leading-relaxed font-light text-base md:text-lg">{feature.description}</p>
+                  <p className="text-slate-300 leading-relaxed font-light text-base md:text-lg">{feature.description}</p>
                 </div>
                 <div className="flex-1 w-full">
                   {renderPreview(feature.preview)}
