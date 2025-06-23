@@ -37,7 +37,6 @@ const Solution = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states
       gsap.set(titleRef.current, { opacity: 0, y: 50 });
       gsap.set(subtitleRef.current, { opacity: 0, y: 30 });
       gsap.set(featuresRef.current, { 
@@ -46,7 +45,6 @@ const Solution = () => {
         scale: 0.95
       });
 
-      // Header animation
       const headerTL = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -70,7 +68,6 @@ const Solution = () => {
           ease: "power2.out"
         }, "-=0.4");
 
-      // Feature animations
       featuresRef.current.forEach((feature, index) => {
         if (feature) {
           gsap.to(feature, {
@@ -88,7 +85,6 @@ const Solution = () => {
             delay: index * 0.2
           });
 
-          // Hover animation
           const hoverTl = gsap.timeline({ paused: true });
           hoverTl.to(feature, {
             scale: 1.02,
@@ -119,7 +115,6 @@ const Solution = () => {
                   94% Confidence
                 </div>
               </div>
-              {/* Chart visualization */}
               <div className="relative h-24 bg-blue-900/30 rounded-lg overflow-hidden border border-blue-500/20">
                 <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between px-2 pb-2">
                   <div className="w-4 bg-gradient-to-t from-blue-500/80 to-blue-400/60" style={{height: '40%'}}></div>
@@ -160,7 +155,6 @@ const Solution = () => {
                   Brand Aligned
                 </div>
               </div>
-              {/* Design preview mockup */}
               <div className="bg-amber-900/20 rounded-lg p-4 border border-amber-500/20">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-orange-500 rounded"></div>
@@ -207,7 +201,6 @@ const Solution = () => {
                   Auto-Deploy
                 </div>
               </div>
-              {/* Deployment pipeline visualization */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 p-3 bg-green-900/20 rounded border border-green-500/20">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -251,11 +244,11 @@ const Solution = () => {
   };
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-800 via-blue-700 to-amber-800 overflow-hidden" ref={sectionRef}>
+    <section className="relative py-16 md:py-24 bg-gradient-to-b from-blue-700 via-blue-600 to-blue-500 overflow-hidden" ref={sectionRef}>
       <div className="relative container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 md:mb-20">
-            <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
               Three breakthrough capabilities.<br />One autonomous system.
             </h2>
             <p ref={subtitleRef} className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
@@ -263,22 +256,20 @@ const Solution = () => {
             </p>
           </div>
           
-          <div className="space-y-16 md:space-y-20">
+          <div className="space-y-12 md:space-y-16">
             {features.map((feature, index) => (
               <div 
                 key={index} 
                 ref={el => featuresRef.current[index] = el}
-                className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-8 md:gap-12 px-4 sm:px-0`}
+                className="text-center px-4 sm:px-0"
               >
-                <div className="flex-1">
-                  <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium mb-4 md:mb-6 ${feature.accent}`}>
-                    <feature.icon className="w-3 h-3" />
-                    <span>0{index + 1}</span>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 leading-tight">{feature.title}</h3>
-                  <p className="text-blue-100 leading-relaxed font-light text-base md:text-lg">{feature.description}</p>
+                <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium mb-4 md:mb-6 ${feature.accent}`}>
+                  <feature.icon className="w-3 h-3" />
+                  <span>0{index + 1}</span>
                 </div>
-                <div className="flex-1 w-full">
+                <h3 className="text-xl md:text-2xl font-light text-white mb-3 md:mb-4 leading-tight">{feature.title}</h3>
+                <p className="text-blue-100 leading-relaxed font-light text-base md:text-lg max-w-2xl mx-auto mb-6 md:mb-8">{feature.description}</p>
+                <div className="max-w-md mx-auto">
                   {renderPreview(feature.preview)}
                 </div>
               </div>

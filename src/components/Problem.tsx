@@ -27,7 +27,6 @@ const Problem = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states - toned down from before
       gsap.set(titleRef.current, { 
         opacity: 0, 
         y: 60, 
@@ -43,13 +42,12 @@ const Problem = () => {
       gsap.set(itemsRef.current, { 
         opacity: 0, 
         y: 80, 
-        x: (i) => (i % 2 === 0 ? -50 : 50), // Reduced from 100 to 50
-        scale: 0.8, // Increased from 0.6 to 0.8
-        rotation: (i) => (i % 2 === 0 ? -8 : 8), // Reduced from 15 to 8
+        x: (i) => (i % 2 === 0 ? -50 : 50),
+        scale: 0.8,
+        rotation: (i) => (i % 2 === 0 ? -8 : 8),
         transformOrigin: "center center"
       });
 
-      // Animate title and subtitle first
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -74,7 +72,6 @@ const Problem = () => {
         ease: "power2.out"
       }, "-=0.6");
 
-      // Animate problem items with smoother stagger
       itemsRef.current.forEach((item, index) => {
         if (item) {
           gsap.to(item, {
@@ -84,25 +81,24 @@ const Problem = () => {
             scale: 1,
             rotation: 0,
             duration: 1.2,
-            ease: "back.out(1.2)", // Reduced from elastic for smoother feel
+            ease: "back.out(1.2)",
             scrollTrigger: {
               trigger: item,
               start: "top 85%",
               end: "top 50%",
               toggleActions: "play none none reverse"
             },
-            delay: index * 0.2 // Reduced stagger delay
+            delay: index * 0.2
           });
         }
       });
 
-      // Add subtle floating animation on hover
       itemsRef.current.forEach((item) => {
         if (item) {
           const hoverTl = gsap.timeline({ paused: true });
           hoverTl.to(item, {
-            y: -10, // Reduced from -20
-            scale: 1.02, // Reduced from 1.05
+            y: -10,
+            scale: 1.02,
             duration: 0.4,
             ease: "power2.out"
           });
@@ -120,15 +116,15 @@ const Problem = () => {
   return (
     <section 
       data-section="problem" 
-      className="relative py-16 md:py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 overflow-hidden" 
+      className="relative py-16 md:py-24 bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800 overflow-hidden" 
       ref={sectionRef}
     >
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="text-center mb-12 md:mb-16">
             <h2 
               ref={titleRef}
-              className="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
+              className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
               Self-improving websites are the future
             </h2>
@@ -140,20 +136,20 @@ const Problem = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 md:gap-12 px-4 sm:px-0">
+          <div className="space-y-8 md:space-y-12 px-4 sm:px-0">
             {problems.map((problem, index) => (
               <div 
                 key={index} 
                 ref={el => itemsRef.current[index] = el}
-                className="text-center group cursor-pointer"
+                className="text-center"
               >
                 <div className="mb-6">
-                  <div className="w-1 h-12 md:h-16 bg-gradient-to-b from-blue-300 to-blue-500 mx-auto rounded-full group-hover:from-blue-200 group-hover:to-blue-400 transition-all duration-300"></div>
+                  <div className="w-1 h-16 bg-gradient-to-b from-blue-300 to-blue-500 mx-auto rounded-full"></div>
                 </div>
-                <h3 className="text-base md:text-lg font-medium text-white mb-3 md:mb-4 leading-tight">
+                <h3 className="text-lg md:text-xl font-medium text-white mb-4 leading-tight">
                   {problem.title}
                 </h3>
-                <p className="text-sm md:text-base text-blue-100 leading-relaxed font-light">
+                <p className="text-base text-blue-100 leading-relaxed font-light max-w-md mx-auto">
                   {problem.description}
                 </p>
               </div>
