@@ -69,12 +69,19 @@ const Hero = () => {
       // Main entrance animation with longer delay to ensure everything is ready
       const tl = gsap.timeline({ delay: 0.8 });
       
-      // First show the gradient overlay
+      // First show the gradient overlay with dynamic color transition
       tl.to(gradientRef.current, {
         opacity: 1,
         duration: 1.8,
         ease: "power2.out"
       })
+      
+      // Animate gradient from darker to brighter blue during the sequence
+      .to(gradientRef.current, {
+        background: "linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.75) 35%, rgba(59, 130, 246, 0.65) 70%, rgba(147, 197, 253, 0.55) 100%)",
+        duration: 2.5,
+        ease: "power2.inOut"
+      }, "-=1.2")
       
       // Then animate the title container and individual words
       .to(titleRef.current, {
@@ -217,10 +224,13 @@ const Hero = () => {
           />
         </div>
 
-        {/* Subtle dark overlay for text readability - removed blue tint */}
+        {/* Dynamic gradient overlay that transitions from darker to brighter blue */}
         <div 
           ref={gradientRef}
-          className="absolute inset-0 bg-black/30"
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 25%, rgba(51, 65, 85, 0.75) 50%, rgba(71, 85, 105, 0.65) 75%, rgba(100, 116, 139, 0.55) 100%)"
+          }}
         ></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
