@@ -12,7 +12,6 @@ const Hero = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonsRef = useRef(null);
-  const gradientRef = useRef(null);
   const titleWordsRef = useRef([]);
   const subtitleLinesRef = useRef([]);
 
@@ -33,7 +32,7 @@ const Hero = () => {
       const titleWords = titleWordsRef.current.filter(Boolean);
       const subtitleLines = subtitleLinesRef.current.filter(Boolean);
       
-      if (!titleRef.current || !subtitleRef.current || !buttonsRef.current || !gradientRef.current) {
+      if (!titleRef.current || !subtitleRef.current || !buttonsRef.current) {
         return;
       }
 
@@ -41,10 +40,6 @@ const Hero = () => {
       gsap.set([titleRef.current, subtitleRef.current, buttonsRef.current], { 
         opacity: 0,
         visibility: 'hidden'
-      });
-      
-      gsap.set(gradientRef.current, { 
-        opacity: 0 
       });
 
       // Set initial states for individual words and lines
@@ -69,26 +64,12 @@ const Hero = () => {
       // Main entrance animation with longer delay to ensure everything is ready
       const tl = gsap.timeline({ delay: 0.8 });
       
-      // First show the gradient overlay with dynamic color transition
-      tl.to(gradientRef.current, {
-        opacity: 1,
-        duration: 1.8,
-        ease: "power2.out"
-      })
-      
-      // Animate gradient from darker to brighter blue during the sequence
-      .to(gradientRef.current, {
-        background: "linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.75) 35%, rgba(59, 130, 246, 0.65) 70%, rgba(147, 197, 253, 0.55) 100%)",
-        duration: 2.5,
-        ease: "power2.inOut"
-      }, "-=1.2")
-      
-      // Then animate the title container and individual words
-      .to(titleRef.current, {
+      // Animate the title container and individual words
+      tl.to(titleRef.current, {
         opacity: 1,
         visibility: 'visible',
         duration: 0.1
-      }, "-=1.2")
+      })
       .to(titleWords, {
         opacity: 1,
         y: 0,
@@ -99,7 +80,7 @@ const Hero = () => {
           amount: 1.2,
           from: "start"
         }
-      }, "-=1")
+      }, "-=0.8")
       
       // Animate subtitle
       .to(subtitleRef.current, {
@@ -123,15 +104,6 @@ const Hero = () => {
         duration: 0.8,
         ease: "back.out(1.1)"
       }, "-=0.3");
-
-      // Subtle floating animation for the gradient overlay only
-      gsap.to(gradientRef.current, {
-        y: 15,
-        duration: 6,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true
-      });
 
     }, heroRef);
 
@@ -215,7 +187,7 @@ const Hero = () => {
   return (
     <>
       <section className="relative bg-slate-900 min-h-screen flex items-center overflow-hidden" ref={heroRef}>
-        {/* Static background image - no animations applied */}
+        {/* Clean background image - no overlays or effects */}
         <div className="absolute inset-0">
           <img 
             src="/image0.png" 
@@ -224,14 +196,8 @@ const Hero = () => {
           />
         </div>
 
-        {/* Dynamic gradient overlay that transitions from darker to brighter blue */}
-        <div 
-          ref={gradientRef}
-          className="absolute inset-0"
-          style={{
-            background: "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.85) 25%, rgba(51, 65, 85, 0.75) 50%, rgba(71, 85, 105, 0.65) 75%, rgba(100, 116, 139, 0.55) 100%)"
-          }}
-        ></div>
+        {/* Minimal text shadow overlay for readability only */}
+        <div className="absolute inset-0 bg-black/20"></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
