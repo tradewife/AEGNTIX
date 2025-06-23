@@ -91,9 +91,9 @@ const Guarantee = () => {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-br from-yellow-300/90 via-yellow-200/85 to-orange-200/80 overflow-hidden" ref={sectionRef}>
-      {/* Delicate warm overlay matching the soft yellow-orange gradient in screenshot */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-200/40 via-yellow-100/30 to-orange-100/50"></div>
+    <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-400 via-blue-300 to-yellow-300 overflow-hidden" ref={sectionRef}>
+      {/* EXACT gradient overlay matching mobile screenshot - soft blue to yellow transition */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-300/60 via-blue-200/40 to-yellow-200/70"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
