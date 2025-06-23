@@ -217,29 +217,29 @@ const Hero = () => {
           />
         </div>
 
-        {/* Blue gradient with warm highlights - full overlay */}
+        {/* Blue gradient with warm highlights - restored to deployed version */}
         <div 
           ref={gradientRef}
-          className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-amber-900/40"
+          className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-blue-800/40 to-amber-900/30"
         ></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Main headline */}
+            {/* Main headline - mobile kept at text-3xl, desktop restored to original smaller sizes */}
             <h1 ref={titleRef} className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-6 md:mb-8 leading-[1.1] tracking-tight drop-shadow-2xl opacity-0 invisible">
               <span ref={el => titleWordsRef.current[0] = el} className="inline-block">What</span>{' '}
               <span ref={el => titleWordsRef.current[1] = el} className="inline-block">if</span>{' '}
               <span ref={el => titleWordsRef.current[2] = el} className="inline-block">your</span>{' '}
               <span ref={el => titleWordsRef.current[3] = el} className="inline-block">website</span>{' '}
               <span ref={el => titleWordsRef.current[4] = el} className="inline-block">was</span>
-              <span className="block font-medium text-amber-100">
+              <span className="block font-medium text-blue-100">
                 <span ref={el => titleWordsRef.current[5] = el} className="inline-block">your</span>{' '}
                 <span ref={el => titleWordsRef.current[6] = el} className="inline-block">star</span>{' '}
                 <span ref={el => titleWordsRef.current[7] = el} className="inline-block">employee?</span>
               </span>
             </h1>
 
-            {/* Sub-headline */}
+            {/* Refined sub-headline with better mobile responsive text - INITIALLY HIDDEN */}
             <div ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
               <p ref={el => subtitleLinesRef.current[0] = el} className="inline">
                 AegntSite is the world's first agency for <em>self-evolving</em>
@@ -256,7 +256,7 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* CTA buttons */}
+            {/* Elegant CTA buttons with glass styling - correct order and text - INITIALLY HIDDEN */}
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 md:mb-20 px-4 sm:px-0 opacity-0 invisible">
               <button 
                 onClick={scrollToSection}
@@ -268,7 +268,7 @@ const Hero = () => {
               
               <button 
                 onClick={() => setShowWaitlistModal(true)}
-                className="group bg-amber-500/20 backdrop-blur-sm text-amber-100 px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-amber-500/30 border border-amber-400/30 w-full sm:w-auto justify-center"
+                className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
               >
                 Join the waitlist
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
