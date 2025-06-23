@@ -217,10 +217,10 @@ const Hero = () => {
           />
         </div>
 
-        {/* Blue gradient with warm highlights - exactly as in mobile screenshots */}
+        {/* Subtle dark overlay for text readability - removed blue tint */}
         <div 
           ref={gradientRef}
-          className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-amber-900/40"
+          className="absolute inset-0 bg-black/30"
         ></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
