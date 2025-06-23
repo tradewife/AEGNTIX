@@ -207,72 +207,75 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative bg-slate-900 min-h-screen flex items-center overflow-hidden" ref={heroRef}>
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-amber-900 min-h-screen flex items-center overflow-hidden" ref={heroRef}>
         {/* Static background image - no animations applied */}
         <div className="absolute inset-0">
           <img 
             src="/image0.png" 
             alt="Business professionals collaborating" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-30"
           />
         </div>
 
-        {/* Blue gradient with warm highlights - exactly as in mobile screenshots */}
+        {/* Blue gradient with warm amber highlights - exactly as in mobile screenshots */}
         <div 
           ref={gradientRef}
-          className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-amber-900/40"
+          className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-amber-900/60"
         ></div>
         
         <div className="relative container mx-auto px-6 py-12 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Main headline - mobile kept at text-3xl, desktop restored to original smaller sizes */}
-            <h1 ref={titleRef} className="text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-6 md:mb-8 leading-[1.1] tracking-tight drop-shadow-2xl opacity-0 invisible">
-              <span ref={el => titleWordsRef.current[0] = el} className="inline-block">What</span>{' '}
-              <span ref={el => titleWordsRef.current[1] = el} className="inline-block">if</span>{' '}
-              <span ref={el => titleWordsRef.current[2] = el} className="inline-block">your</span>{' '}
-              <span ref={el => titleWordsRef.current[3] = el} className="inline-block">website</span>{' '}
-              <span ref={el => titleWordsRef.current[4] = el} className="inline-block">was</span>
-              <span className="block font-medium text-blue-100">
-                <span ref={el => titleWordsRef.current[5] = el} className="inline-block">your</span>{' '}
-                <span ref={el => titleWordsRef.current[6] = el} className="inline-block">star</span>{' '}
-                <span ref={el => titleWordsRef.current[7] = el} className="inline-block">employee?</span>
-              </span>
-            </h1>
+            {/* Glass card container for mobile - exactly like screenshot */}
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 md:p-8 mb-8 md:mb-12 mx-4 sm:mx-0">
+              {/* Main headline - mobile kept at text-3xl, desktop restored to original smaller sizes */}
+              <h1 ref={titleRef} className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-white mb-4 md:mb-6 leading-[1.1] tracking-tight drop-shadow-2xl opacity-0 invisible">
+                <span ref={el => titleWordsRef.current[0] = el} className="inline-block">Zero-touch</span>{' '}
+                <span ref={el => titleWordsRef.current[1] = el} className="inline-block">deployment</span>
+                <span className="block font-medium text-blue-100 mt-2">
+                  <span ref={el => titleWordsRef.current[2] = el} className="inline-block">Generate</span>{' '}
+                  <span ref={el => titleWordsRef.current[3] = el} className="inline-block">production</span>{' '}
+                  <span ref={el => titleWordsRef.current[4] = el} className="inline-block">code</span>{' '}
+                  <span ref={el => titleWordsRef.current[5] = el} className="inline-block">and</span>{' '}
+                  <span ref={el => titleWordsRef.current[6] = el} className="inline-block">deploy</span>{' '}
+                  <span ref={el => titleWordsRef.current[7] = el} className="inline-block">changes</span>{' '}
+                  <span ref={el => titleWordsRef.current[8] = el} className="inline-block">safely</span>{' '}
+                  <span ref={el => titleWordsRef.current[9] = el} className="inline-block">with</span>{' '}
+                  <span ref={el => titleWordsRef.current[10] = el} className="inline-block">automated</span>{' '}
+                  <span ref={el => titleWordsRef.current[11] = el} className="inline-block">rollback</span>{' '}
+                  <span ref={el => titleWordsRef.current[12] = el} className="inline-block">protection.</span>
+                </span>
+              </h1>
 
-            {/* Refined sub-headline with better mobile responsive text - INITIALLY HIDDEN */}
-            <div ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
-              <p ref={el => subtitleLinesRef.current[0] = el} className="inline">
-                AegntSite is the world's first agency for <em>self-evolving</em>
-              </p>
-              <span className="hidden sm:inline"><br /></span>
-              <span className="sm:hidden"> </span>
-              <p ref={el => subtitleLinesRef.current[1] = el} className="inline">
-                websites that audit, redesign and deploy guaranteed
-              </p>
-              <span className="hidden sm:inline"><br /></span>
-              <span className="sm:hidden"> </span>
-              <p ref={el => subtitleLinesRef.current[2] = el} className="inline">
-                conversion lifts while you focus on the <em>human</em> things.
-              </p>
-            </div>
+              {/* Refined sub-headline with better mobile responsive text - INITIALLY HIDDEN */}
+              <div ref={subtitleRef} className="text-sm sm:text-base md:text-lg text-blue-100 mb-6 md:mb-8 max-w-xl mx-auto leading-relaxed font-light drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
+                <p ref={el => subtitleLinesRef.current[0] = el} className="inline">
+                  Deployment Pipeline
+                </p>
+                <span className="hidden sm:inline"><br /></span>
+                <span className="sm:hidden"> </span>
+                <p ref={el => subtitleLinesRef.current[1] = el} className="inline">
+                  Auto-Deploy
+                </p>
+              </div>
 
-            {/* Elegant CTA buttons with glass styling - correct order and text - INITIALLY HIDDEN */}
-            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 md:mb-20 px-4 sm:px-0 opacity-0 invisible">
-              <button 
-                onClick={scrollToSection}
-                className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
-              >
-                Learn more
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-              
-              <button 
-                onClick={() => setShowWaitlistModal(true)}
-                className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
-              >
-                Join the waitlist
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              {/* Elegant CTA buttons with glass styling - correct order and text - INITIALLY HIDDEN */}
+              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0 opacity-0 invisible">
+                <button 
+                  onClick={scrollToSection}
+                  className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
+                >
+                  Learn more
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+                
+                <button 
+                  onClick={() => setShowWaitlistModal(true)}
+                  className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
+                >
+                  Join the waitlist
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
