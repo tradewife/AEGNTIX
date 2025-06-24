@@ -213,9 +213,9 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* RESTORED ORIGINAL SUBTITLE - exactly as you wrote it */}
+            {/* Updated subtitle with human-in-the-loop emphasis */}
             <p ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
-              Aegnt.Site is the world's first agency for <em>self-evolving</em> websites led by human experts. We audit, redesign and deploy conversion lifts guided by real-time data to scale your business now and into the future.
+              Aegnt.Site is the world's first agency for <em>self-evolving</em> websites with human-in-the-loop. We audit, redesign and deploy conversion lifts guided by real-time data to scale your business now and into the future.
             </p>
 
             {/* Elegant CTA buttons with glass styling - correct order and text - INITIALLY HIDDEN */}
