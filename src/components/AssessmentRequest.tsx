@@ -194,20 +194,20 @@ const AssessmentRequest = () => {
 
   if (isSubmitted) {
     return (
-      <section data-section="assessment" className="relative py-16 md:py-24 overflow-hidden">
-        {/* Professional woman working from home background */}
+      <section data-section="assessment" className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Professional woman working from home background - FULL VIEW */}
         <div className="absolute inset-0">
           <img 
             src="/trade.wife_Diverse_female_professional_working_from_home_offi_7cf454f8-c224-46cf-9758-5861d74a2169_3.png" 
             alt="Professional woman working from home" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
         </div>
         
         {/* Warm overlay for text readability */}
         <div className="absolute inset-0 bg-slate-900/70"></div>
         
-        <div className="relative container mx-auto px-6">
+        <div className="relative container mx-auto px-6 py-16 md:py-24">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8 md:mb-12">
               <div className="w-12 h-12 bg-amber-400/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-amber-300/30">
@@ -238,20 +238,20 @@ const AssessmentRequest = () => {
   }
 
   return (
-    <section data-section="assessment" className="relative overflow-hidden py-16 md:py-24" ref={sectionRef}>
-      {/* Professional woman working from home background */}
+    <section data-section="assessment" className="relative min-h-screen flex items-center overflow-hidden" ref={sectionRef}>
+      {/* Professional woman working from home background - FULL VIEW SPANNING ENTIRE PAGE */}
       <div className="absolute inset-0">
         <img 
           src="/trade.wife_Diverse_female_professional_working_from_home_offi_7cf454f8-c224-46cf-9758-5861d74a2169_3.png" 
           alt="Professional woman working from home" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
       
       {/* Warm overlay for text readability */}
       <div className="absolute inset-0 bg-slate-900/65"></div>
       
-      <div className="relative container mx-auto px-6">
+      <div className="relative container mx-auto px-6 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0 drop-shadow-lg">
