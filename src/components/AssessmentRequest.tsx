@@ -194,28 +194,31 @@ const AssessmentRequest = () => {
 
   if (isSubmitted) {
     return (
-      <section data-section="assessment" className="relative bg-gradient-to-br from-purple-100/90 via-blue-50/85 to-indigo-100/80 py-16 md:py-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-blue-25/30 to-indigo-50/40"></div>
+      <section data-section="assessment" className="relative py-16 md:py-24" style={{
+        background: 'linear-gradient(135deg, #8B8680 0%, #9B9590 25%, #A8A29E 50%, #B5B0AB 75%, #C2BDB8 100%)'
+      }}>
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-black/5"></div>
         
         <div className="relative container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8 md:mb-12">
-              <div className="w-12 h-12 bg-purple-400/20 rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-purple-300/30">
-                <div className="w-6 h-6 rounded-full bg-purple-400/40 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+              <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-white/30">
+                <div className="w-6 h-6 rounded-full bg-white/30 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-white/80"></div>
                 </div>
               </div>
             </div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-slate-900 mb-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-4">
               Assessment request received
             </h2>
-            <p className="text-base md:text-lg text-slate-600 mb-6 md:mb-8 font-light leading-relaxed px-4 sm:px-0">
+            <p className="text-base md:text-lg text-white/90 mb-6 md:mb-8 font-light leading-relaxed px-4 sm:px-0">
               Your website assessment request has been submitted successfully. 
               I'll personally review your site and provide detailed insights within 24-48 hours.
             </p>
-            <div className="bg-white/80 border border-purple-200/60 rounded-xl p-4 md:p-6 text-left mx-4 sm:mx-0 backdrop-blur-sm shadow-sm">
-              <p className="font-medium text-slate-900 mb-2">What happens next?</p>
-              <ul className="text-slate-600 font-light text-sm md:text-base space-y-2">
+            <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl p-4 md:p-6 text-left mx-4 sm:mx-0 shadow-sm">
+              <p className="font-medium text-white mb-2">What happens next?</p>
+              <ul className="text-white/90 font-light text-sm md:text-base space-y-2">
                 <li>• I'll personally audit your website's design and user experience</li>
                 <li>• You'll receive a detailed assessment with specific improvement recommendations</li>
                 <li>• Priority consideration for AegntSite's private beta program</li>
@@ -228,16 +231,19 @@ const AssessmentRequest = () => {
   }
 
   return (
-    <section data-section="assessment" className="relative bg-gradient-to-br from-purple-100/90 via-blue-50/85 to-indigo-100/80 overflow-hidden py-16 md:py-24" ref={sectionRef}>
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-blue-25/30 to-indigo-50/40"></div>
+    <section data-section="assessment" className="relative overflow-hidden py-16 md:py-24" ref={sectionRef} style={{
+      background: 'linear-gradient(135deg, #8B8680 0%, #9B9590 25%, #A8A29E 50%, #B5B0AB 75%, #C2BDB8 100%)'
+    }}>
+      {/* Subtle overlay for depth */}
+      <div className="absolute inset-0 bg-black/5"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
-            <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-4 md:mb-6 leading-tight px-4 sm:px-0">
+            <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
               Get a <em>personalized</em> website assessment
             </h2>
-            <p ref={subtitleRef} className="text-base md:text-lg text-slate-600 font-light leading-relaxed px-4 sm:px-0 max-w-2xl mx-auto">
+            <p ref={subtitleRef} className="text-base md:text-lg text-white/90 font-light leading-relaxed px-4 sm:px-0 max-w-2xl mx-auto">
               Submit your website for a detailed human review. I'll personally analyze your design, 
               user experience, and conversion potential with AI-powered insights.
             </p>
@@ -249,27 +255,27 @@ const AssessmentRequest = () => {
               <div 
                 key={index}
                 ref={el => featuresRef.current[index] = el}
-                className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/50"
+                className="text-center p-4 bg-white/15 backdrop-blur-sm rounded-xl border border-white/25"
               >
-                <div className="w-10 h-10 bg-purple-400/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <feature.icon className="w-5 h-5 text-purple-600" />
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <feature.icon className="w-5 h-5 text-white/90" />
                 </div>
-                <h3 className="font-medium text-slate-900 mb-2">{feature.title}</h3>
-                <p className="text-sm text-slate-600 font-light">{feature.description}</p>
+                <h3 className="font-medium text-white mb-2">{feature.title}</h3>
+                <p className="text-sm text-white/80 font-light">{feature.description}</p>
               </div>
             ))}
           </div>
 
-          <div ref={formRef} className="bg-white/80 border border-purple-200/60 rounded-xl shadow-sm p-6 md:p-8 mx-4 sm:mx-0 backdrop-blur-sm max-w-2xl mx-auto">
+          <div ref={formRef} className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl shadow-sm p-6 md:p-8 mx-4 sm:mx-0 max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {submitError && (
-                <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                  <p className="text-red-600 text-sm">{submitError}</p>
+                <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-3">
+                  <p className="text-red-100 text-sm">{submitError}</p>
                 </div>
               )}
               
               <div ref={el => fieldsRef.current[0] = el}>
-                <label htmlFor="assessment-website" className="block text-sm font-medium text-slate-700 mb-2 md:mb-3">
+                <label htmlFor="assessment-website" className="block text-sm font-medium text-white mb-2 md:mb-3">
                   Website URL
                 </label>
                 <input
@@ -277,20 +283,20 @@ const AssessmentRequest = () => {
                   id="assessment-website"
                   value={formData.website}
                   onChange={(e) => handleInputChange('website', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400/20 text-slate-900 placeholder-slate-400 bg-white/90 ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 text-slate-900 placeholder-slate-500 bg-white/90 ${
                     errors.website 
-                      ? 'border-red-300 focus:border-red-500' 
-                      : 'border-purple-200 focus:border-purple-400'
+                      ? 'border-red-400/50 focus:border-red-400' 
+                      : 'border-white/30 focus:border-white/50'
                   }`}
                   placeholder="https://yourwebsite.com"
                 />
                 {errors.website && (
-                  <p className="mt-2 text-sm text-red-600">{errors.website}</p>
+                  <p className="mt-2 text-sm text-red-200">{errors.website}</p>
                 )}
               </div>
 
               <div ref={el => fieldsRef.current[1] = el}>
-                <label htmlFor="assessment-email" className="block text-sm font-medium text-slate-700 mb-2 md:mb-3">
+                <label htmlFor="assessment-email" className="block text-sm font-medium text-white mb-2 md:mb-3">
                   Your email
                 </label>
                 <input
@@ -298,30 +304,30 @@ const AssessmentRequest = () => {
                   id="assessment-email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400/20 text-slate-900 placeholder-slate-400 bg-white/90 ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 text-slate-900 placeholder-slate-500 bg-white/90 ${
                     errors.email 
-                      ? 'border-red-300 focus:border-red-500' 
-                      : 'border-purple-200 focus:border-purple-400'
+                      ? 'border-red-400/50 focus:border-red-400' 
+                      : 'border-white/30 focus:border-white/50'
                   }`}
                   placeholder="you@company.com"
                 />
                 {errors.email && (
-                  <p className="mt-2 text-sm text-red-600">{errors.email}</p>
+                  <p className="mt-2 text-sm text-red-200">{errors.email}</p>
                 )}
               </div>
 
               <div ref={el => fieldsRef.current[2] = el}>
-                <label htmlFor="assessment-persona" className="block text-sm font-medium text-slate-700 mb-2 md:mb-3">
+                <label htmlFor="assessment-persona" className="block text-sm font-medium text-white mb-2 md:mb-3">
                   What describes you best?
                 </label>
                 <select
                   id="assessment-persona"
                   value={formData.persona}
                   onChange={(e) => handleInputChange('persona', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400/20 text-slate-900 bg-white/90 ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/20 text-slate-900 bg-white/90 ${
                     errors.persona 
-                      ? 'border-red-300 focus:border-red-500' 
-                      : 'border-purple-200 focus:border-purple-400'
+                      ? 'border-red-400/50 focus:border-red-400' 
+                      : 'border-white/30 focus:border-white/50'
                   }`}
                 >
                   <option value="" className="text-slate-500">Select your role</option>
@@ -333,7 +339,7 @@ const AssessmentRequest = () => {
                   <option value="other">Other</option>
                 </select>
                 {errors.persona && (
-                  <p className="mt-2 text-sm text-red-600">{errors.persona}</p>
+                  <p className="mt-2 text-sm text-red-200">{errors.persona}</p>
                 )}
               </div>
 
@@ -341,11 +347,11 @@ const AssessmentRequest = () => {
                 ref={el => fieldsRef.current[3] = el}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-full bg-white/90 hover:bg-white text-slate-900 py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 {isSubmitting ? (
                   <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-3"></div>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-slate-900 mr-3"></div>
                     Submitting request...
                   </>
                 ) : (
@@ -357,7 +363,7 @@ const AssessmentRequest = () => {
               </button>
             </form>
 
-            <p className="text-center text-xs md:text-sm text-slate-500 mt-4 md:mt-6 font-light">
+            <p className="text-center text-xs md:text-sm text-white/80 mt-4 md:mt-6 font-light">
               Free assessment • 24-48 hour turnaround • No spam, ever
             </p>
           </div>
