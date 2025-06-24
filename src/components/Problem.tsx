@@ -135,7 +135,7 @@ const Problem = () => {
               ref={subtitleRef}
               className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             >
-              Every day of delayed optimization is lost revenue. The current process is fundamentally broken.
+              The alternatives offer tools because they lack the expertise or incentive to provide solutions. Aegnt.site is an investment in robust systems you can rely on to do the work and handle issues quickly and independently.
             </p>
           </div>
           
