@@ -115,7 +115,7 @@ const Problem = () => {
               ref={titleRef}
               className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
-              The current CRO options for businesses lack integration and logical workflows.
+              Current CRO lacks integration
             </h2>
           </div>
           
