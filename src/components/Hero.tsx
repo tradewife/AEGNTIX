@@ -13,7 +13,6 @@ const Hero = () => {
   const subtitleRef = useRef(null);
   const buttonsRef = useRef(null);
   const titleWordsRef = useRef([]);
-  const subtitleLinesRef = useRef([]);
 
   const [showWaitlistModal, setShowWaitlistModal] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,7 +29,6 @@ const Hero = () => {
     const ctx = gsap.context(() => {
       // Ensure all refs are available before setting initial states
       const titleWords = titleWordsRef.current.filter(Boolean);
-      const subtitleLines = subtitleLinesRef.current.filter(Boolean);
       
       if (!titleRef.current || !subtitleRef.current || !buttonsRef.current) {
         return;
@@ -42,7 +40,7 @@ const Hero = () => {
         visibility: 'hidden'
       });
 
-      // Set initial states for individual words and lines
+      // Set initial states for individual words
       if (titleWords.length > 0) {
         gsap.set(titleWords, {
           opacity: 0,
@@ -52,14 +50,12 @@ const Hero = () => {
         });
       }
 
-      if (subtitleLines.length > 0) {
-        gsap.set(subtitleLines, {
-          opacity: 0,
-          x: -80,
-          rotationY: -25,
-          transformOrigin: "left center"
-        });
-      }
+      // Set initial state for subtitle as single element
+      gsap.set(subtitleRef.current, {
+        opacity: 0,
+        y: 60,
+        scale: 0.95
+      });
 
       // Main entrance animation with longer delay to ensure everything is ready
       const tl = gsap.timeline({ delay: 0.8 });
@@ -82,20 +78,15 @@ const Hero = () => {
         }
       }, "-=0.8")
       
-      // Animate subtitle
+      // Animate subtitle as single flowing paragraph
       .to(subtitleRef.current, {
         opacity: 1,
         visibility: 'visible',
-        duration: 0.1
-      }, "-=0.6")
-      .to(subtitleLines, {
-        opacity: 1,
-        x: 0,
-        rotationY: 0,
+        y: 0,
+        scale: 1,
         duration: 1,
-        ease: "power2.out",
-        stagger: 0.3
-      }, "-=0.5")
+        ease: "power2.out"
+      }, "-=0.6")
       
       // Finally show buttons
       .to(buttonsRef.current, {
@@ -222,22 +213,10 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* NEW SUBTITLE - Aegnt.Site description with elegant line breaks */}
-            <div ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
-              <p ref={el => subtitleLinesRef.current[0] = el} className="inline">
-                Aegnt.Site is the world's first agency for <em>self-evolving</em> websites led by human experts.
-              </p>
-              <span className="hidden sm:inline"><br /></span>
-              <span className="sm:hidden"> </span>
-              <p ref={el => subtitleLinesRef.current[1] = el} className="inline">
-                We audit, redesign and deploy conversion lifts guided by real-time data
-              </p>
-              <span className="hidden sm:inline"><br /></span>
-              <span className="sm:hidden"> </span>
-              <p ref={el => subtitleLinesRef.current[2] = el} className="inline">
-                to scale your business now and into the future.
-              </p>
-            </div>
+            {/* CONTINUOUS PARAGRAPH SUBTITLE - flows naturally as one piece */}
+            <p ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
+              Aegnt.Site is the world's first agency for <em>self-evolving</em> websites led by human experts. We audit, redesign and deploy conversion lifts guided by real-time data to scale your business now and into the future.
+            </p>
 
             {/* Elegant CTA buttons with glass styling - correct order and text - INITIALLY HIDDEN */}
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-16 md:mb-20 px-4 sm:px-0 opacity-0 invisible">
