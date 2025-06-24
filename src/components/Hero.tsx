@@ -222,20 +222,20 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* Refined sub-headline with better mobile responsive text - INITIALLY HIDDEN */}
-            <div ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
+            {/* NEW SUBTITLE - Aegnt.Site description with elegant line breaks */}
+            <div ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
               <p ref={el => subtitleLinesRef.current[0] = el} className="inline">
-                AegntSite is the world's first agency for <em>self-evolving</em>
+                Aegnt.Site is the world's first agency for <em>self-evolving</em> websites led by human experts.
               </p>
               <span className="hidden sm:inline"><br /></span>
               <span className="sm:hidden"> </span>
               <p ref={el => subtitleLinesRef.current[1] = el} className="inline">
-                websites that audit, redesign and deploy guaranteed
+                We audit, redesign and deploy conversion lifts guided by real-time data
               </p>
               <span className="hidden sm:inline"><br /></span>
               <span className="sm:hidden"> </span>
               <p ref={el => subtitleLinesRef.current[2] = el} className="inline">
-                conversion lifts while you focus on the <em>human</em> things.
+                to scale your business now and into the future.
               </p>
             </div>
 
