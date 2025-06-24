@@ -163,6 +163,12 @@ const AssessmentRequest = () => {
         ? formData.website 
         : `https://${formData.website}`;
 
+      console.log('Submitting assessment request:', {
+        email: formData.email,
+        website: website,
+        persona: formData.persona
+      });
+
       await submitAssessmentRequest({
         email: formData.email,
         website: website,
@@ -172,11 +178,7 @@ const AssessmentRequest = () => {
       setIsSubmitted(true);
     } catch (error) {
       console.error('Assessment request error:', error);
-      if (error.code === '23505') {
-        setSubmitError('You already have a pending assessment request!');
-      } else {
-        setSubmitError('Something went wrong. Please try again.');
-      }
+      setSubmitError('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
