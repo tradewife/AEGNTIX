@@ -129,7 +129,7 @@ const Problem = () => {
               ref={titleRef}
               className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
-              Hybrid Human-AI ecosystems will crush 'set and forget' automations
+              Fully autonomous AI systems are compromise quality for quantity
             </h2>
             <p 
               ref={subtitleRef}
