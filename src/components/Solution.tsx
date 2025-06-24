@@ -20,7 +20,7 @@ const Solution = () => {
       preview: "analytics"
     },
     {
-      title: "Brand-aligned autonomous design", 
+      title: "Brand-aligned designs curated by master designers", 
       description: "Generate conversion-optimized designs that maintain your brand identity and aesthetic standards.",
       accent: "bg-amber-400/30 text-amber-100",
       icon: Palette,
@@ -60,13 +60,7 @@ const Solution = () => {
           y: 0,
           duration: 0.8,
           ease: "power2.out"
-        })
-        .to(subtitleRef.current, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: "power2.out"
-        }, "-=0.4");
+        });
 
       featuresRef.current.forEach((feature, index) => {
         if (feature) {
