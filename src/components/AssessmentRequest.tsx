@@ -196,7 +196,7 @@ const AssessmentRequest = () => {
 
   if (isSubmitted) {
     return (
-      <section data-section="assessment" className="relative min-h-screen flex items-center overflow-hidden">
+      <section data-section="assessment" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* STUNNING geometric abstraction background - PURE, NO FILTERS */}
         <div className="absolute inset-0">
           <img 
@@ -240,7 +240,7 @@ const AssessmentRequest = () => {
   }
 
   return (
-    <section data-section="assessment" className="relative min-h-screen flex items-center overflow-hidden" ref={sectionRef}>
+    <section data-section="assessment" className="relative min-h-screen flex items-center justify-center overflow-hidden" ref={sectionRef}>
       {/* BREATHTAKING geometric abstraction - showcasing the full crystalline beauty */}
       <div className="absolute inset-0">
         <img 
@@ -253,9 +253,9 @@ const AssessmentRequest = () => {
       {/* MINIMAL overlay - preserves the gorgeous blue-orange gradient transitions */}
       <div className="absolute inset-0 bg-black/15"></div>
       
-      <div className="relative container mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8 md:mb-12">
+      <div className="relative w-full max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <div className="flex flex-col items-center justify-center min-h-[80vh]">
+          <div className="text-center mb-8 md:mb-12 w-full max-w-4xl">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0 drop-shadow-xl">
               Get a <em>personalized</em> website assessment
             </h2>
@@ -266,7 +266,7 @@ const AssessmentRequest = () => {
           </div>
 
           {/* Assessment Features */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8 md:mb-12 px-4 sm:px-0">
+          <div className="grid md:grid-cols-3 gap-6 mb-8 md:mb-12 px-4 sm:px-0 w-full max-w-4xl">
             {assessmentFeatures.map((feature, index) => (
               <div 
                 key={index}
@@ -282,106 +282,109 @@ const AssessmentRequest = () => {
             ))}
           </div>
 
-          <div ref={formRef} className="bg-black/30 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl p-6 md:p-8 mx-4 sm:mx-0 max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-              {submitError && (
-                <div className="bg-red-500/25 border border-red-400/40 rounded-lg p-3">
-                  <p className="text-red-100 text-sm">{submitError}</p>
+          {/* PERFECTLY CENTERED FORM CONTAINER */}
+          <div className="w-full flex justify-center">
+            <div ref={formRef} className="bg-black/30 backdrop-blur-md border border-white/30 rounded-xl shadow-2xl p-6 md:p-8 w-full max-w-lg">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                {submitError && (
+                  <div className="bg-red-500/25 border border-red-400/40 rounded-lg p-3">
+                    <p className="text-red-100 text-sm">{submitError}</p>
+                  </div>
+                )}
+                
+                <div ref={el => fieldsRef.current[0] = el}>
+                  <label htmlFor="assessment-website" className="block text-sm font-medium text-white mb-2 md:mb-3">
+                    Website URL
+                  </label>
+                  <input
+                    type="text"
+                    id="assessment-website"
+                    value={formData.website}
+                    onChange={(e) => handleInputChange('website', e.target.value)}
+                    className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
+                      errors.website 
+                        ? 'border-red-400/60 focus:border-red-400' 
+                        : 'border-white/40 focus:border-white/70'
+                    }`}
+                    placeholder="https://yourwebsite.com"
+                  />
+                  {errors.website && (
+                    <p className="mt-2 text-sm text-red-200">{errors.website}</p>
+                  )}
                 </div>
-              )}
-              
-              <div ref={el => fieldsRef.current[0] = el}>
-                <label htmlFor="assessment-website" className="block text-sm font-medium text-white mb-2 md:mb-3">
-                  Website URL
-                </label>
-                <input
-                  type="text"
-                  id="assessment-website"
-                  value={formData.website}
-                  onChange={(e) => handleInputChange('website', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
-                    errors.website 
-                      ? 'border-red-400/60 focus:border-red-400' 
-                      : 'border-white/40 focus:border-white/70'
-                  }`}
-                  placeholder="https://yourwebsite.com"
-                />
-                {errors.website && (
-                  <p className="mt-2 text-sm text-red-200">{errors.website}</p>
-                )}
-              </div>
 
-              <div ref={el => fieldsRef.current[1] = el}>
-                <label htmlFor="assessment-email" className="block text-sm font-medium text-white mb-2 md:mb-3">
-                  Your email
-                </label>
-                <input
-                  type="email"
-                  id="assessment-email"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
-                    errors.email 
-                      ? 'border-red-400/60 focus:border-red-400' 
-                      : 'border-white/40 focus:border-white/70'
-                  }`}
-                  placeholder="you@company.com"
-                />
-                {errors.email && (
-                  <p className="mt-2 text-sm text-red-200">{errors.email}</p>
-                )}
-              </div>
+                <div ref={el => fieldsRef.current[1] = el}>
+                  <label htmlFor="assessment-email" className="block text-sm font-medium text-white mb-2 md:mb-3">
+                    Your email
+                  </label>
+                  <input
+                    type="email"
+                    id="assessment-email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
+                      errors.email 
+                        ? 'border-red-400/60 focus:border-red-400' 
+                        : 'border-white/40 focus:border-white/70'
+                    }`}
+                    placeholder="you@company.com"
+                  />
+                  {errors.email && (
+                    <p className="mt-2 text-sm text-red-200">{errors.email}</p>
+                  )}
+                </div>
 
-              <div ref={el => fieldsRef.current[2] = el}>
-                <label htmlFor="assessment-persona" className="block text-sm font-medium text-white mb-2 md:mb-3">
-                  What describes you best?
-                </label>
-                <select
-                  id="assessment-persona"
-                  value={formData.persona}
-                  onChange={(e) => handleInputChange('persona', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40 text-slate-900 bg-white/95 backdrop-blur-sm ${
-                    errors.persona 
-                      ? 'border-red-400/60 focus:border-red-400' 
-                      : 'border-white/40 focus:border-white/70'
-                  }`}
+                <div ref={el => fieldsRef.current[2] = el}>
+                  <label htmlFor="assessment-persona" className="block text-sm font-medium text-white mb-2 md:mb-3">
+                    What describes you best?
+                  </label>
+                  <select
+                    id="assessment-persona"
+                    value={formData.persona}
+                    onChange={(e) => handleInputChange('persona', e.target.value)}
+                    className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40 text-slate-900 bg-white/95 backdrop-blur-sm ${
+                      errors.persona 
+                        ? 'border-red-400/60 focus:border-red-400' 
+                        : 'border-white/40 focus:border-white/70'
+                    }`}
+                  >
+                    <option value="" className="text-slate-500">Select your role</option>
+                    <option value="business_owner">Business owner</option>
+                    <option value="marketing_manager">Marketing manager</option>
+                    <option value="designer">Designer/Developer</option>
+                    <option value="agency">Agency owner/director</option>
+                    <option value="consultant">Consultant</option>
+                    <option value="other">Other</option>
+                  </select>
+                  {errors.persona && (
+                    <p className="mt-2 text-sm text-red-200">{errors.persona}</p>
+                  )}
+                </div>
+
+                <button
+                  ref={el => fieldsRef.current[3] = el}
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-white/25 hover:bg-white/35 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-xl backdrop-blur-md border border-white/40"
                 >
-                  <option value="" className="text-slate-500">Select your role</option>
-                  <option value="business_owner">Business owner</option>
-                  <option value="marketing_manager">Marketing manager</option>
-                  <option value="designer">Designer/Developer</option>
-                  <option value="agency">Agency owner/director</option>
-                  <option value="consultant">Consultant</option>
-                  <option value="other">Other</option>
-                </select>
-                {errors.persona && (
-                  <p className="mt-2 text-sm text-red-200">{errors.persona}</p>
-                )}
-              </div>
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-3"></div>
+                      Submitting request...
+                    </>
+                  ) : (
+                    <>
+                      Request personalized assessment
+                      <ArrowRight className="ml-2 w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </form>
 
-              <button
-                ref={el => fieldsRef.current[3] = el}
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-white/25 hover:bg-white/35 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-xl backdrop-blur-md border border-white/40"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-3"></div>
-                    Submitting request...
-                  </>
-                ) : (
-                  <>
-                    Request personalized assessment
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </>
-                )}
-              </button>
-            </form>
-
-            <p className="text-center text-xs md:text-sm text-white/80 mt-4 md:mt-6 font-light">
-              Free assessment • 24-48 hour turnaround • No spam, ever
-            </p>
+              <p className="text-center text-xs md:text-sm text-white/80 mt-4 md:mt-6 font-light">
+                Free assessment • 24-48 hour turnaround • No spam, ever
+              </p>
+            </div>
           </div>
         </div>
       </div>
