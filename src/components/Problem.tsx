@@ -129,7 +129,7 @@ const Problem = () => {
               ref={titleRef}
               className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
-              Expert-led AI ecosystems will crush <em>'set and forget'</em> automations
+              Aegnt.Site is the world's first agency for <em>self-evolving</em> websites led by human experts. We audit, redesign and deploy conversion lifts guided by real-time data to scale your business now and into the future
             </h2>
             <p 
               ref={subtitleRef}
