@@ -129,7 +129,7 @@ const Problem = () => {
               ref={titleRef}
               className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
-              Self-improving websites are the future
+              Expert-led AI ecosystems will crush <em>'set and forget'</em> automations
             </h2>
             <p 
               ref={subtitleRef}
