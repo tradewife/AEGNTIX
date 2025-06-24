@@ -213,7 +213,7 @@ const Hero = () => {
               </span>
             </h1>
 
-            {/* CONTINUOUS PARAGRAPH SUBTITLE - flows naturally as one piece */}
+            {/* RESTORED ORIGINAL SUBTITLE - exactly as you wrote it */}
             <p ref={subtitleRef} className="text-base sm:text-lg md:text-xl text-white mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-lg px-4 sm:px-0 opacity-0 invisible">
               Aegnt.Site is the world's first agency for <em>self-evolving</em> websites led by human experts. We audit, redesign and deploy conversion lifts guided by real-time data to scale your business now and into the future.
             </p>
