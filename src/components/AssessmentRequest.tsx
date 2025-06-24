@@ -195,37 +195,37 @@ const AssessmentRequest = () => {
   if (isSubmitted) {
     return (
       <section data-section="assessment" className="relative py-16 md:py-24 overflow-hidden">
-        {/* Holographic background image */}
+        {/* Professional woman working from home background */}
         <div className="absolute inset-0">
           <img 
-            src="/trade.wife_Mixed-race_male_data_scientist_analyzing_holograph_84817c1c-0157-4ea4-9211-be417bb8345e_2.png" 
-            alt="Data scientist analyzing holographic displays" 
+            src="/trade.wife_Diverse_female_professional_working_from_home_offi_7cf454f8-c224-46cf-9758-5861d74a2169_3.png" 
+            alt="Professional woman working from home" 
             className="w-full h-full object-cover"
           />
         </div>
         
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-slate-900/75"></div>
+        {/* Warm overlay for text readability */}
+        <div className="absolute inset-0 bg-slate-900/70"></div>
         
         <div className="relative container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="mb-8 md:mb-12">
-              <div className="w-12 h-12 bg-cyan-400/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-cyan-300/30">
-                <div className="w-6 h-6 rounded-full bg-cyan-400/40 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400"></div>
+              <div className="w-12 h-12 bg-amber-400/20 backdrop-blur-sm rounded-xl flex items-center justify-center mx-auto mb-6 md:mb-8 border border-amber-300/30">
+                <div className="w-6 h-6 rounded-full bg-amber-400/40 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-amber-400"></div>
                 </div>
               </div>
             </div>
             <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-white mb-4 drop-shadow-lg">
               Assessment request received
             </h2>
-            <p className="text-base md:text-lg text-cyan-100/90 mb-6 md:mb-8 font-light leading-relaxed px-4 sm:px-0 drop-shadow-md">
+            <p className="text-base md:text-lg text-amber-100/90 mb-6 md:mb-8 font-light leading-relaxed px-4 sm:px-0 drop-shadow-md">
               Your website assessment request has been submitted successfully. 
               I'll personally review your site and provide detailed insights within 24-48 hours.
             </p>
-            <div className="bg-slate-900/60 backdrop-blur-sm border border-cyan-400/30 rounded-xl p-4 md:p-6 text-left mx-4 sm:mx-0 shadow-xl">
-              <p className="font-medium text-cyan-100 mb-2">What happens next?</p>
-              <ul className="text-cyan-100/80 font-light text-sm md:text-base space-y-2">
+            <div className="bg-slate-900/60 backdrop-blur-sm border border-amber-400/30 rounded-xl p-4 md:p-6 text-left mx-4 sm:mx-0 shadow-xl">
+              <p className="font-medium text-amber-100 mb-2">What happens next?</p>
+              <ul className="text-amber-100/80 font-light text-sm md:text-base space-y-2">
                 <li>• I'll personally audit your website's design and user experience</li>
                 <li>• You'll receive a detailed assessment with specific improvement recommendations</li>
                 <li>• Priority consideration for AegntSite's private beta program</li>
@@ -239,17 +239,17 @@ const AssessmentRequest = () => {
 
   return (
     <section data-section="assessment" className="relative overflow-hidden py-16 md:py-24" ref={sectionRef}>
-      {/* Holographic background image */}
+      {/* Professional woman working from home background */}
       <div className="absolute inset-0">
         <img 
-          src="/trade.wife_Mixed-race_male_data_scientist_analyzing_holograph_84817c1c-0157-4ea4-9211-be417bb8345e_2.png" 
-          alt="Data scientist analyzing holographic displays" 
+          src="/trade.wife_Diverse_female_professional_working_from_home_offi_7cf454f8-c224-46cf-9758-5861d74a2169_3.png" 
+          alt="Professional woman working from home" 
           className="w-full h-full object-cover"
         />
       </div>
       
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-slate-900/70"></div>
+      {/* Warm overlay for text readability */}
+      <div className="absolute inset-0 bg-slate-900/65"></div>
       
       <div className="relative container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
@@ -257,7 +257,7 @@ const AssessmentRequest = () => {
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0 drop-shadow-lg">
               Get a <em>personalized</em> website assessment
             </h2>
-            <p ref={subtitleRef} className="text-base md:text-lg text-cyan-100/90 font-light leading-relaxed px-4 sm:px-0 max-w-2xl mx-auto drop-shadow-md">
+            <p ref={subtitleRef} className="text-base md:text-lg text-amber-100/90 font-light leading-relaxed px-4 sm:px-0 max-w-2xl mx-auto drop-shadow-md">
               Submit your website for a detailed human review. I'll personally analyze your design, 
               user experience, and conversion potential with AI-powered insights.
             </p>
@@ -269,18 +269,18 @@ const AssessmentRequest = () => {
               <div 
                 key={index}
                 ref={el => featuresRef.current[index] = el}
-                className="text-center p-4 bg-slate-900/40 backdrop-blur-sm rounded-xl border border-cyan-400/30 shadow-lg"
+                className="text-center p-4 bg-slate-900/40 backdrop-blur-sm rounded-xl border border-amber-400/30 shadow-lg"
               >
-                <div className="w-10 h-10 bg-cyan-400/20 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <feature.icon className="w-5 h-5 text-cyan-300" />
+                <div className="w-10 h-10 bg-amber-400/20 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <feature.icon className="w-5 h-5 text-amber-300" />
                 </div>
                 <h3 className="font-medium text-white mb-2 drop-shadow-sm">{feature.title}</h3>
-                <p className="text-sm text-cyan-100/80 font-light">{feature.description}</p>
+                <p className="text-sm text-amber-100/80 font-light">{feature.description}</p>
               </div>
             ))}
           </div>
 
-          <div ref={formRef} className="bg-slate-900/60 backdrop-blur-sm border border-cyan-400/30 rounded-xl shadow-xl p-6 md:p-8 mx-4 sm:mx-0 max-w-2xl mx-auto">
+          <div ref={formRef} className="bg-slate-900/60 backdrop-blur-sm border border-amber-400/30 rounded-xl shadow-xl p-6 md:p-8 mx-4 sm:mx-0 max-w-2xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               {submitError && (
                 <div className="bg-red-500/20 border border-red-400/30 rounded-lg p-3">
@@ -289,7 +289,7 @@ const AssessmentRequest = () => {
               )}
               
               <div ref={el => fieldsRef.current[0] = el}>
-                <label htmlFor="assessment-website" className="block text-sm font-medium text-cyan-100 mb-2 md:mb-3">
+                <label htmlFor="assessment-website" className="block text-sm font-medium text-amber-100 mb-2 md:mb-3">
                   Website URL
                 </label>
                 <input
@@ -297,10 +297,10 @@ const AssessmentRequest = () => {
                   id="assessment-website"
                   value={formData.website}
                   onChange={(e) => handleInputChange('website', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400/30 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
                     errors.website 
                       ? 'border-red-400/50 focus:border-red-400' 
-                      : 'border-cyan-400/30 focus:border-cyan-400/60'
+                      : 'border-amber-400/30 focus:border-amber-400/60'
                   }`}
                   placeholder="https://yourwebsite.com"
                 />
@@ -310,7 +310,7 @@ const AssessmentRequest = () => {
               </div>
 
               <div ref={el => fieldsRef.current[1] = el}>
-                <label htmlFor="assessment-email" className="block text-sm font-medium text-cyan-100 mb-2 md:mb-3">
+                <label htmlFor="assessment-email" className="block text-sm font-medium text-amber-100 mb-2 md:mb-3">
                   Your email
                 </label>
                 <input
@@ -318,10 +318,10 @@ const AssessmentRequest = () => {
                   id="assessment-email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400/30 text-slate-900 placeholder-slate-500 bg-white/95 backdrop-blur-sm ${
                     errors.email 
                       ? 'border-red-400/50 focus:border-red-400' 
-                      : 'border-cyan-400/30 focus:border-cyan-400/60'
+                      : 'border-amber-400/30 focus:border-amber-400/60'
                   }`}
                   placeholder="you@company.com"
                 />
@@ -331,17 +331,17 @@ const AssessmentRequest = () => {
               </div>
 
               <div ref={el => fieldsRef.current[2] = el}>
-                <label htmlFor="assessment-persona" className="block text-sm font-medium text-cyan-100 mb-2 md:mb-3">
+                <label htmlFor="assessment-persona" className="block text-sm font-medium text-amber-100 mb-2 md:mb-3">
                   What describes you best?
                 </label>
                 <select
                   id="assessment-persona"
                   value={formData.persona}
                   onChange={(e) => handleInputChange('persona', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 text-slate-900 bg-white/95 backdrop-blur-sm ${
+                  className={`w-full px-4 py-3 rounded-lg border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400/30 text-slate-900 bg-white/95 backdrop-blur-sm ${
                     errors.persona 
                       ? 'border-red-400/50 focus:border-red-400' 
-                      : 'border-cyan-400/30 focus:border-cyan-400/60'
+                      : 'border-amber-400/30 focus:border-amber-400/60'
                   }`}
                 >
                   <option value="" className="text-slate-500">Select your role</option>
@@ -361,7 +361,7 @@ const AssessmentRequest = () => {
                 ref={el => fieldsRef.current[3] = el}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-cyan-400/90 hover:bg-cyan-400 text-slate-900 py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg backdrop-blur-sm"
+                className="w-full bg-amber-400/90 hover:bg-amber-400 text-slate-900 py-3 px-6 rounded-lg font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg backdrop-blur-sm"
               >
                 {isSubmitting ? (
                   <>
@@ -377,7 +377,7 @@ const AssessmentRequest = () => {
               </button>
             </form>
 
-            <p className="text-center text-xs md:text-sm text-cyan-100/70 mt-4 md:mt-6 font-light">
+            <p className="text-center text-xs md:text-sm text-amber-100/70 mt-4 md:mt-6 font-light">
               Free assessment • 24-48 hour turnaround • No spam, ever
             </p>
           </div>
