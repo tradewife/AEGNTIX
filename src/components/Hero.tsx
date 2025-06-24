@@ -229,10 +229,10 @@ const Hero = () => {
               </button>
               
               <button 
-                onClick={() => setShowWaitlistModal(true)}
+                onClick={scrollToAssessment}
                 className="group bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 rounded-lg text-sm font-medium transition-all duration-300 flex items-center hover:bg-white/20 border border-white/20 w-full sm:w-auto justify-center"
               >
-                Join the waitlist
+                Learn more
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
