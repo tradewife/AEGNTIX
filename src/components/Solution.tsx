@@ -252,7 +252,7 @@ const Solution = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 ref={titleRef} className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0">
-              From audit to revenue lift<br />in three steps
+              Our Dev is your Dev. He knows this system because he built it from first principles. We don't sell software we provide solutions.
             </h2>
             <p ref={subtitleRef} className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0">
               Enterprise-grade setup in minutes. Guaranteed results while you focus on strategy.
