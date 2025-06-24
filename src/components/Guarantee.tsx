@@ -228,7 +228,7 @@ const Guarantee = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row justify-evenly items-center space-y-4 sm:space-y-0 px-4 sm:px-0">
             {trustIndicators.map((indicator, index) => (
               <div key={index} ref={el => indicatorsRef.current[index] = el} className="text-center cursor-pointer">
                 <div className="w-2 h-2 rounded-full bg-orange-500/70 mx-auto mb-3"></div>
