@@ -115,7 +115,7 @@ const Problem = () => {
               ref={titleRef}
               className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
-              Current CRO lacks integration
+              Your website is an investment, without cohesive systems to maintain it things get messy.
             </h2>
           </div>
           
