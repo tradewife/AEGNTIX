@@ -4,7 +4,7 @@ import Problem from './components/Problem';
 import Solution from './components/Solution';
 import HowItWorks from './components/HowItWorks';
 import Guarantee from './components/Guarantee';
-import WaitlistCTA from './components/WaitlistCTA';
+import AssessmentRequest from './components/AssessmentRequest';
 import Footer from './components/Footer';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Solution />
       <HowItWorks />
       <Guarantee />
-      <WaitlistCTA />
+      <AssessmentRequest />
       <Footer />
     </div>
   );
