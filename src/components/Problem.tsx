@@ -135,7 +135,7 @@ const Problem = () => {
               ref={subtitleRef}
               className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
             >
-              Aegnt.site is an investment in robust systems you can rely on to do the work and handle issues quickly and independently.
+              Aegnt.site is an investment in robust systems tailored to your requirements and fully managed by our team.
             </p>
           </div>
           
