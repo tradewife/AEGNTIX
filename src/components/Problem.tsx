@@ -8,7 +8,6 @@ const Problem = () => {
   const sectionRef = useRef(null);
   const itemsRef = useRef([]);
   const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
 
   const problems = [
     {
@@ -31,12 +30,6 @@ const Problem = () => {
         opacity: 0, 
         y: 60, 
         scale: 0.9
-      });
-      
-      gsap.set(subtitleRef.current, { 
-        opacity: 0, 
-        y: 40, 
-        scale: 0.95
       });
 
       gsap.set(itemsRef.current, { 
@@ -63,14 +56,7 @@ const Problem = () => {
         scale: 1,
         duration: 1,
         ease: "power3.out"
-      })
-      .to(subtitleRef.current, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.out"
-      }, "-=0.6");
+      });
 
       itemsRef.current.forEach((item, index) => {
         if (item) {
@@ -129,14 +115,8 @@ const Problem = () => {
               ref={titleRef}
               className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight px-4 sm:px-0"
             >
-              Fully autonomous AI systems are compromise quality for quantity
+              The current CRO options for businesses lack integration and logical workflows.
             </h2>
-            <p 
-              ref={subtitleRef}
-              className="text-base md:text-lg text-blue-50/90 max-w-2xl mx-auto font-light leading-relaxed px-4 sm:px-0"
-            >
-              Aegnt.site is an investment in robust systems tailored to your requirements and fully managed by our team.
-            </p>
           </div>
           
           <div className="space-y-8 md:space-y-12 px-4 sm:px-0">
